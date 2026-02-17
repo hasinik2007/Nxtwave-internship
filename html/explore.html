@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Echo - Explore</title>
+    <link rel="stylesheet" href="../css/explore.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <aside class="sidebar">
+        <div class="logo">
+            <div class="logo-icon"><i data-lucide="rss"></i></div>
+            <span>Echo</span>
+        </div>
+       <nav class="nav">
+    <div class="nav-item" onclick="location.href='home.html'">
+        <i data-lucide="home"></i><span>Home</span>
+    </div>
+    
+    <div class="nav-item active" onclick="location.href='explore.html'">
+        <i data-lucide="compass"></i><span>Explore</span>
+    </div>
+    
+    <div class="nav-item" onclick="location.href='library.html'">
+        <i data-lucide="library"></i><span>Library</span>
+    </div>
+    
+    <div class="nav-item" onclick="location.href='setting.html'">
+        <i data-lucide="settings"></i><span>Settings</span>
+    </div>
+</nav>
+    </aside>
+
+    <main class="main-content">
+        <header>
+            <h1>Explore</h1>
+            <div class="search-container">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input type="text" id="searchInput" placeholder="Search podcasts, episodes, or hosts..." onkeyup="filterPodcasts()">
+            </div>
+        </header>
+
+        <section class="section" id="categoriesSection">
+            <h3 class="head">Browse Categories</h3>
+            <div class="category-grid">
+                <div class="card red"><span class="icon">🔍</span><p>True Crime</p></div>
+                <div class="card orange"><span class="icon">😂</span><p>Comedy</p></div>
+                <div class="card blue"><span class="icon">💻</span><p>Technology</p></div>
+                <div class="card teal"><span class="icon">📰</span><p>News</p></div>
+                <div class="card purple"><span class="icon">🔬</span><p>Science</p></div>
+                <div class="card dark-grey"><span class="icon">💼</span><p>Business</p></div>
+                <div class="card green"><span class="icon">🧘</span><p>Health</p></div>
+                <div class="card violet"><span class="icon">🌎</span><p>Society</p></div>
+            </div>
+        </section>
+
+        <section class="section" id="chartsSection">
+            <h3 class="head">Top Charts</h3>
+            <div class="charts-container">
+                <div class="chart-row">
+                    <a href="one.html" style="text-decoration: none; color: inherit;">
+                    <div class="chart-card searchable" data-title="the daily tech" data-host="sarah chen" onclick="location.href='daily_tech.html'">
+                        <span class="rank">1</span>
+                        <div class="chart-img" style="background-image: url('https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=200&h=200&fit=crop')"></div>
+                        <div class="chart-info">
+                            <h4 class="title-text">The Daily Tech</h4>
+                            <p class="pt-3 host-text">Sarah Chen</p>
+                        </div>
+                        <div class="chart-stats"><span>1.3M</span><br><span class="eps pt-5">245 eps</span></div>
+                    </div>
+                    </a>
+                    <a href="mystery.html" style="text-decoration: none; color: inherit;">
+                        <div class="chart-card searchable" data-title="mystery files" data-host="detective audio" onclick="location.href='mystery_files.html'">
+                            <span class="rank">2</span>
+                            <div class="chart-img" style="background-image: url('https://images.unsplash.com/photo-1509475826633-fed577a2c71b?w=200&h=200&fit=crop')"></div>
+                            <div class="chart-info">
+                                <h4 class="title-text">Mystery Files</h4>
+                                <p class="pt-3 host-text">Detective Audio</p>
+                            </div>
+                            <div class="chart-stats"><span>2.5M</span><br><span class="eps pt-5">188 eps</span></div>
+                        </div>
+                    </a>
+                    <a href="laugh.html" style="text-decoration: none; color: inherit;">
+                        <div class="chart-card searchable" data-title="laugh track" data-host="comedy central" onclick="location.href='laugh_track.html'">
+                            <span class="rank">3</span>
+                            <div class="chart-img" style="background-image: url('https://images.unsplash.com/photo-1527224538127-2104bb71c51b?w=200&h=200&fit=crop')"></div>
+                            <div class="chart-info">
+                                <h4 class="title-text">Laugh Track</h4>
+                                <p class="pt-3 host-text">Comedy Central</p>
+                            </div>
+                            <div class="chart-stats"><span>890K</span><br><span class="eps pt-5">312 eps</span></div>
+                        </div>
+                    </a>
+                </div>
+                
+                <div class="chart-row">
+                    <a href="science.html" style="text-decoration: none; color: inherit;">
+                        <div class="chart-card searchable" data-title="science unlocked" data-host="dr. maya williams" onclick="location.href='science_unlocked.html'">
+                            <span class="rank">4</span>
+                            <div class="chart-img" style="background-image: url('https://images.unsplash.com/photo-1507413245164-6160d8298b31?w=200&h=200&fit=crop')"></div>
+                            <div class="chart-info">
+                                <h4 class="title-text">Science Unlocked</h4>
+                                <p class="pt-3 host-text">Dr. Maya Williams</p>
+                            </div>
+                            <div class="chart-stats"><span>750K</span><br><span class="eps pt-5">156 eps</span></div>
+                        </div>
+                    </a>
+                    <a href="morning.html" style="text-decoration: none; color: inherit;">
+                    <div class="chart-card searchable" data-title="morning briefing" data-host="global news network" onclick="location.href='morning_briefing.html'">
+                        <span class="rank">5</span>
+                        <div class="chart-img" style="background-image: url('https://images.unsplash.com/photo-1504711434969-e33886168f5c?w=200&h=200&fit=crop')"></div>
+                        <div class="chart-info">
+                            <h4 class="title-text">Morning Briefing</h4>
+                            <p class="pt-3 host-text">Global News Network</p>
+                        </div>
+                        <div class="chart-stats"><span>3.1M</span><br><span class="eps pt-5">520 eps</span></div>
+                    </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div class="playback-status-bar"><span>Select an episode to start listening</span></div>
+
+    <script>
+        lucide.createIcons();
+
+        function filterPodcasts() {
+            const input = document.getElementById('searchInput').value.toLowerCase();
+            const cards = document.querySelectorAll('.searchable');
+            const categories = document.getElementById('categoriesSection');
+
+            if (input.length > 0) {
+                categories.style.display = 'none';
+            } else {
+                categories.style.display = 'block';
+            }
+
+            cards.forEach(card => {
+                const title = card.getAttribute('data-title');
+                const host = card.getAttribute('data-host');
+                if (title.includes(input) || host.includes(input)) {
+                    card.style.display = 'flex';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+    </script>
+</body>
+</html>

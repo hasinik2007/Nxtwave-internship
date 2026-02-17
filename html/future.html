@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Echo - Future Forward</title>
+    <link rel="stylesheet" href="../css/home.css">
+    <link rel="stylesheet" href="../css/future.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+
+    <aside class="sidebar">
+        <div class="logo">
+            <div class="logo-icon"><i data-lucide="rss"></i></div>
+            <span>Echo</span>
+        </div>
+        <nav class="nav">
+            <div class="nav-item" onclick="location.href='home.html'"><i data-lucide="home"></i><span>Home</span></div>
+            <div class="nav-item active" onclick="location.href='explore.html'"><i data-lucide="compass"></i><span>Explore</span></div>
+            <div class="nav-item" onclick="location.href='library.html'"><i data-lucide="library"></i><span>Library</span></div>
+            <div class="nav-item" onclick="location.href='setting.html'"><i data-lucide="settings"></i><span>Settings</span></div>
+        </nav>
+    </aside>
+
+    <main class="main-content">
+        <a href="home.html" class="back-link">
+            <i class="fa-solid fa-chevron-left"></i> Back
+        </a>
+
+        <section class="podcast-header">
+            <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=400&h=400&fit=crop" alt="Future Forward" class="podcast-image">
+            <div class="podcast-details">
+                <span class="category-tag">Technology</span>
+                <h1>Future Forward</h1>
+                <p class="author-name">Innovation Lab</p>
+                <div class="stats-bar">
+                    <span><i class="fa-solid fa-users stat-icon"></i> 560K subscribers</span>
+                    <span><i class="fa-solid fa-headphones stat-icon"></i> 87 episodes</span>
+                </div>
+                <div class="podcast-actions">
+                    <button class="play-latest-btn gradient-btn">▶ Latest Episode</button>
+                    <button class="sub-btn outline-purple"><i class="fa-regular fa-heart"></i> Subscribe</button>
+                    <button class="share-btn large-share"><i class="fa-solid fa-share-nodes"></i></button>
+                </div>
+            </div>
+        </section>
+
+        <input type="radio" name="tabs" id="tab-episodes" checked hidden>
+        <input type="radio" name="tabs" id="tab-about" hidden>
+
+        <div class="page-tabs">
+            <label for="tab-episodes" class="tab-label">Episodes</label>
+            <label for="tab-about" class="tab-label">About</label>
+        </div>
+
+        <div class="tab-content">
+            <section id="episodes-list" class="content-panel">
+                <div class="no-episodes">
+                    <p>No episodes available yet</p>
+                </div>
+            </section>
+            
+            <section id="about-info" class="content-panel">
+                <h3>About this show</h3>
+                <p class="show-description">
+                    Exploring the technologies and ideas that will shape tomorrow.
+                </p>
+                <div class="host-section">
+                    <h4>Host</h4>
+                    <div class="host-card">
+                        <div class="host-avatar-circle"></div>
+                        <div class="host-text">
+                            <p class="host-name">Innovation Lab</p>
+                            <p class="host-title">Creator & Host</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <div class="playback-status-bar" id="playbackBar">
+        <div class="placeholder-text">
+            <span>Select an episode to start listening</span>
+        </div>
+    </div>
+
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>

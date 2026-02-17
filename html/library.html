@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Echo - Your Library</title>
+    <link rel="stylesheet" href="../css/home.css">
+    <link rel="stylesheet" href="../css/library.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        /* Essential styles for the full-player animation transition */
+        .full-player-page {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at center, #1e293b 0%, #0f172a 100%);
+            z-index: 2000;
+            display: flex;
+            flex-direction: column;
+            padding: 40px;
+            transform: translateY(100%);
+            transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .full-player-page.active {
+            transform: translateY(0);
+        }
+        .glass {
+            background: rgba(15, 23, 42, 0.8) !important;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+    </style>
+</head>
+<body>
+
+    <aside class="sidebar">
+        <div class="logo">
+            <div class="logo-icon"><i data-lucide="rss"></i></div>
+            <span>Echo</span>
+        </div>
+        <nav class="nav">
+            <div class="nav-item" onclick="location.href='home.html'"><i data-lucide="home"></i><span>Home</span></div>
+            <div class="nav-item" onclick="location.href='explore.html'"><i data-lucide="compass"></i><span>Explore</span></div>
+            <div class="nav-item active" onclick="location.href='library.html'"><i data-lucide="library"></i><span>Library</span></div>
+            <div class="nav-item" onclick="location.href='setting.html'"><i data-lucide="settings"></i><span>Settings</span></div>
+        </nav>
+    </aside>
+
+    <main class="main-content">
+        <header class="library-header">
+            <h1>Your Library</h1>
+            <div class="filter-pills">
+                <button class="pill active" onclick="showSection('subscribed', this)">Subscribed Shows</button>
+                <button class="pill" onclick="showSection('saved', this)">Saved Episodes</button>
+                <button class="pill" onclick="showSection('history', this)">History</button>
+            </div>
+        </header>
+
+        <section id="subscribed-section" class="grid-overlap">
+            <a href="one.html" style="text-decoration: none; color: inherit;"> 
+                <div class="card">
+                    <div class="img-wrapper"><img src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=400"><div class="play-button-overlay">▶</div></div>
+                    <h4 class="card-title">The Daily Tech</h4>
+                    <p class="para">Sarah Chen</p>
+                </div>
+            </a>  
+            <a href="mystery.html" style="text-decoration: none; color: inherit;">
+                <div class="card">
+                    <div class="img-wrapper"><img src="https://images.unsplash.com/photo-1509475826633-fed577a2c71b?w=400"><div class="play-button-overlay">▶</div></div>
+                    <h4 class="card-title">Mystery Files</h4>
+                    <p class="para">Detective Audio</p>
+                </div>
+            </a>
+            <a href="laugh.html" style="text-decoration: none; color: inherit;">
+                <div class="card">
+                    <div class="img-wrapper"><img src="https://images.unsplash.com/photo-1527224538127-2104bb71c51b?w=400&h=400&fit=crop"><div class="play-button-overlay">▶</div></div>
+                    <h4 class="card-title">Laugh Track</h4>
+                    <p class="para">Comedy Central</p>
+                </div>
+            </a>
+            <a href="science.html" style="text-decoration: none; color: inherit;">
+                <div class="card">
+                    <div class="img-wrapper"><img src="https://images.unsplash.com/photo-1507413245164-6160d8298b31?w=400"><div class="play-button-overlay">▶</div></div>
+                    <h4 class="card-title">Science Unlocked</h4>
+                    <p class="para">Dr. Maya Williams</p>
+                </div>
+            </a>
+            <a href="morning.html" style="text-decoration: none; color: inherit;">
+                <div class="card">
+                    <div class="img-wrapper"><img src="https://images.unsplash.com/photo-1504711434969-e33886168f5c?w=400"><div class="play-button-overlay">▶</div></div>
+                    <h4 class="card-title">Morning Briefing</h4>
+                    <p class="para">Global News Network</p>
+                </div>
+            </a>
+        </section>
+
+        <section id="saved-section" class="list-container" style="display: none;">
+            <div class="list-card">
+                <div class="list-body">
+                    <div class="list-img-box"><img src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=100"><div class="list-play">▶</div></div>
+                    <div class="list-info"><h5>The AI Revolution: What's Next?</h5><p class="host">The Daily Tech</p><p class="meta">2024-01-15 <i data-lucide="clock"></i> 45:32</p></div>
+                </div>
+                <div class="progress-wrap"><div class="progress-fill" style="width: 40%;"></div></div>
+            </div>
+            <div class="list-card">
+                <div class="list-body">
+                    <div class="list-img-box"><img src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=100"><div class="list-play">▶</div></div>
+                    <div class="list-info"><h5>Apple Vision Pro: First Impressions</h5><p class="host">The Daily Tech</p><p class="meta">2024-01-12 <i data-lucide="clock"></i> 38:15</p></div>
+                </div>
+                <div class="progress-wrap"><div class="progress-fill" style="width: 75%;"></div></div>
+            </div>
+            <div class="list-card">
+                <div class="list-body">
+                    <div class="list-img-box"><img src="https://images.unsplash.com/photo-1509475826633-fed577a2c71b?w=100"><div class="list-play">▶</div></div>
+                    <div class="list-info"><h5>The Disappearance of Flight 370</h5><p class="host">Mystery Files</p><p class="meta">2024-01-14 <i data-lucide="clock"></i> 52:48</p></div>
+                </div>
+                <div class="progress-wrap"><div class="progress-fill" style="width: 20%;"></div></div>
+            </div>
+            <div class="list-card">
+                <div class="list-body">
+                    <div class="list-img-box"><img src="https://images.unsplash.com/photo-1527224538127-2104bb71c51b?w=400&h=400&fit=crop"><div class="list-play">▶</div></div>
+                    <div class="list-info"><h5>Comedy Gold: Best of 2023</h5><p class="host">Laugh Track</p><p class="meta">2024-01-10 <i data-lucide="clock"></i> 1:02:30</p></div>
+                </div>
+                <div class="progress-wrap"><div class="progress-fill" style="width: 55%;"></div></div>
+            </div>
+            <div class="list-card">
+                <div class="list-body">
+                    <div class="list-img-box"><img src="https://images.unsplash.com/photo-1507413245164-6160d8298b31?w=100"><div class="list-play">▶</div></div>
+                    <div class="list-info"><h5>James Webb: New Discoveries</h5><p class="host">Science Unlocked</p><p class="meta">2024-01-13 <i data-lucide="clock"></i> 41:20</p></div>
+                </div>
+                <div class="progress-wrap"><div class="progress-fill" style="width: 90%;"></div></div>
+            </div>
+            <div class="list-card">
+                <div class="list-body">
+                    <div class="list-img-box"><img src="https://images.unsplash.com/photo-1504711434969-e33886168f5c?w=100"><div class="list-play">▶</div></div>
+                    <div class="list-info"><h5>Global Markets Update</h5><p class="host">Morning Briefing</p><p class="meta">2024-01-15 <i data-lucide="clock"></i> 28:45</p></div>
+                </div>
+                <div class="progress-wrap"><div class="progress-fill" style="width: 30%;"></div></div>
+            </div>
+            
+        </section>
+
+        <section id="history-section" class="list-container" style="display: none;">
+            <div class="list-card">
+                <div class="list-body">
+                    <div class="list-img-box"><img src="https://images.unsplash.com/photo-1509475826633-fed577a2c71b?w=100"><div class="list-play">▶</div></div>
+                    <div class="list-info"><h5>The Disappearance of Flight 370</h5><p class="host">Mystery Files</p><p class="meta">2024-01-14 <i data-lucide="clock"></i> 52:48</p></div>
+                </div>
+            </div>
+            <div class="list-card">
+                <div class="list-body">
+                    <div class="list-img-box"><img src="https://images.unsplash.com/photo-1527224538127-2104bb71c51b?w=400&h=400&fit=crop"><div class="list-play">▶</div></div>
+                    <div class="list-info"><h5>Comedy Gold: Best of 2023</h5><p class="host">Laugh Track</p><p class="meta">2024-01-10 <i data-lucide="clock"></i> 1:02:30</p></div>
+                </div>
+            </div>
+            <div class="list-card">
+                <div class="list-body">
+                    <div class="list-img-box"><img src="https://images.unsplash.com/photo-1507413245164-6160d8298b31?w=100"><div class="list-play">▶</div></div>
+                    <div class="list-info"><h5>The James Webb Telescope</h5><p class="host">Science Unlocked</p><p class="meta">2024-01-13 <i data-lucide="clock"></i> 41:20</p></div>
+                </div>
+            </div>
+            <div class="list-card">
+                <div class="list-body">
+                    <div class="list-img-box"><img src="https://images.unsplash.com/photo-1504711434969-e33886168f5c?w=100"><div class="list-play">▶</div></div>
+                    <div class="list-info"><h5>Global Markets Update</h5><p class="host">Morning Briefing</p><p class="meta">2024-01-15 <i data-lucide="clock"></i> 28:45</p></div>
+                </div>
+            </div>
+            <div class="list-card">
+                <div class="list-body">
+                    <div class="list-img-box"><img src="https://images.unsplash.com/photo-1556761175-4b46a572b786?w=100"><div class="list-play">▶</div></div>
+                    <div class="list-info"><h5>From Garage to $10B: Stripe</h5><p class="host">Startup Stories</p><p class="meta">2024-01-11 <i data-lucide="clock"></i> 55:12</p></div>
+                </div>
+            </div>
+            <div class="list-card">
+                <div class="list-body">
+                    <div class="list-img-box"><img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=100"><div class="list-play">▶</div></div>
+                    <div class="list-info"><h5>Morning Meditation</h5><p class="host">Mindful Moments</p><p class="meta">2024-01-15 <i data-lucide="clock"></i> 12:30</p></div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div class="playback-status-bar" id="playbackBar">
+        <div class="placeholder-text" id="playerPlaceholder">
+            <span>Select an episode to start listening</span>
+        </div>
+        
+        <div class="active-player" id="miniPlayer" style="display: none; width: 100%; align-items: center; justify-content: space-between;">
+            <div class="player-info" style="display: flex; align-items: center; gap: 15px;">
+                <img src="" id="miniImg" style="width: 50px; height: 50px; border-radius: 8px; object-fit: cover;">
+                <div class="text-info">
+                    <h5 class="now-playing-title" id="miniTitle" style="font-size: 16px; margin: 0; color: white; font-weight: 600;">Title</h5>
+                    <p class="now-playing-subtitle" id="miniHost" style="font-size: 13px; color: var(--text-dim); margin: 0;">Host</p>
+                </div>
+            </div>
+            
+            <div class="player-controls" style="display: flex; align-items: center; gap: 30px; position: absolute; left: 50%; transform: translateX(-50%);">
+                <i data-lucide="skip-back" class="control-btn" style="cursor: pointer; width: 22px; color: var(--text-dim);"></i>
+                <div class="play-pause-circle toggle-playback" style="width: 44px; height: 44px; background: rgba(255,255,255,0.05); border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer;">
+                    <i data-lucide="pause" class="playback-icon" style="fill: white; color: white; width: 20px;"></i>
+                </div>
+                <i data-lucide="skip-forward" class="control-btn" style="cursor: pointer; width: 22px; color: var(--text-dim);"></i>
+            </div>
+            
+            <div class="player-extra" style="display: flex; align-items: center; gap: 15px; width: 240px; justify-content: flex-end;">
+                <i data-lucide="volume-2" style="width: 20px; color: var(--text-dim);"></i>
+                <div class="volume-bar-container interactive-slider" id="miniVolume" style="width: 100px; height: 4px; background: #334155; border-radius: 2px; position: relative; cursor: pointer;">
+                    <div class="volume-progress slider-fill" style="position: absolute; height: 100%; background: var(--accent-purple); width: 70%; border-radius: 2px;"></div>
+                    <div class="volume-knob slider-knob" style="position: absolute; top: 50%; width: 12px; height: 12px; background: var(--accent-purple); border-radius: 50%; transform: translate(-50%, -50%); left: 70%;"></div>
+                </div>
+                <i data-lucide="maximize-2" id="maximizeBtn" style="width: 18px; color: var(--text-dim); margin-left: 10px; cursor: pointer;"></i>
+            </div>
+        </div>
+    </div>
+
+    <div class="full-player-page glass" id="fullPlayerPage">
+        <div class="full-player-header">
+            <i data-lucide="chevron-down" class="close-btn" id="closeFullPlayer"></i>
+            <div class="header-right">
+                <i data-lucide="share-2"></i>
+                <i data-lucide="heart"></i>
+            </div>
+        </div>
+
+        <div class="full-player-content">
+            <img src="" id="fullImg" class="full-art">
+            <h2 class="full-title" id="fullTitle">Title</h2>
+            <p class="full-subtitle" id="fullHost">Host</p>
+
+            <div class="full-progress-container">
+                <div class="full-progress-bar interactive-slider" id="mainProgress" style="width: 100%; height: 6px; background: rgba(255,255,255,0.1); border-radius: 3px; position: relative; margin-bottom: 12px; cursor: pointer;">
+                    <div class="full-progress-fill slider-fill" style="height: 100%; background: var(--accent-purple); border-radius: 3px; width: 25%;"></div>
+                    <div class="full-progress-knob slider-knob" style="position: absolute; top: 50%; width: 12px; height: 12px; background: var(--accent-purple); border-radius: 50%; transform: translate(-50%, -50%); left: 25%;"></div>
+                </div>
+                <div class="time-info" style="display: flex; justify-content: space-between; color: var(--text-dim); font-size: 14px;">
+                    <span id="currentTime">7:12</span>
+                    <span id="duration">45:32</span>
+                </div>
+            </div>
+
+            <div class="full-controls" style="display: flex; align-items: center; gap: 40px; margin-bottom: 60px;">
+                <i data-lucide="skip-back" style="width: 28px; color: var(--text-dim); cursor: pointer;"></i>
+                <div class="full-play-pause toggle-playback" style="width: 80px; height: 80px; background: var(--accent-purple); border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; box-shadow: 0 10px 30px rgba(139, 92, 246, 0.3);">
+                    <i data-lucide="pause" class="playback-icon" style="width: 32px; color: white; fill: white;"></i>
+                </div>
+                <i data-lucide="skip-forward" style="width: 28px; color: var(--text-dim); cursor: pointer;"></i>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        lucide.createIcons();
+        let isPlaying = true;
+
+        // 1. SECTION SWITCHING
+        function showSection(name, btn) {
+            document.getElementById('subscribed-section').style.display = 'none';
+            document.getElementById('saved-section').style.display = 'none';
+            document.getElementById('history-section').style.display = 'none';
+            document.querySelectorAll('.pill').forEach(p => p.classList.remove('active'));
+            document.getElementById(name + '-section').style.display = (name === 'subscribed') ? 'flex' : 'block';
+            btn.classList.add('active');
+        }
+
+        // 2. ACTIVATE PLAYER
+        const activatePlayer = (data) => {
+            document.getElementById('playerPlaceholder').style.display = 'none';
+            document.getElementById('miniPlayer').style.display = 'flex';
+            document.getElementById('miniTitle').innerText = data.title;
+            document.getElementById('miniHost').innerText = data.host;
+            document.getElementById('miniImg').src = data.img;
+            document.getElementById('fullTitle').innerText = data.title;
+            document.getElementById('fullHost').innerText = data.host;
+            document.getElementById('fullImg').src = data.img;
+            lucide.createIcons();
+        };
+
+        // 3. ATTACH CLICK TO CARDS
+        document.querySelectorAll('.list-card, .card').forEach(card => {
+            card.addEventListener('click', () => {
+                const data = {
+                    title: card.querySelector('h5, .card-title').innerText,
+                    host: card.querySelector('.host, .para').innerText,
+                    img: card.querySelector('img').src
+                };
+                activatePlayer(data);
+            });
+        });
+
+        // 4. MAXIMIZE FEATURE
+        document.getElementById('maximizeBtn').addEventListener('click', (e) => {
+            e.stopPropagation();
+            document.getElementById('fullPlayerPage').classList.add('active');
+        });
+
+        document.getElementById('closeFullPlayer').addEventListener('click', () => {
+            document.getElementById('fullPlayerPage').classList.remove('active');
+        });
+
+        // 5. PLAY/PAUSE SYNC
+        document.querySelectorAll('.toggle-playback').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                isPlaying = !isPlaying;
+                const newIcon = isPlaying ? 'pause' : 'play';
+                document.querySelectorAll('.playback-icon').forEach(icon => {
+                    icon.setAttribute('data-lucide', newIcon);
+                    icon.style.fill = isPlaying ? 'white' : 'none';
+                });
+                lucide.createIcons();
+            });
+        });
+
+        // 6. SLIDER LOGIC
+        function initSlider(containerId) {
+            const container = document.getElementById(containerId);
+            if(!container) return;
+            const fill = container.querySelector('.slider-fill');
+            const knob = container.querySelector('.slider-knob');
+            let isDragging = false;
+
+            const updateSlider = (clientX) => {
+                const rect = container.getBoundingClientRect();
+                let percent = (clientX - rect.left) / rect.width;
+                percent = Math.max(0, Math.min(1, percent));
+                fill.style.width = (percent * 100) + '%';
+                knob.style.left = (percent * 100) + '%';
+            };
+
+            container.addEventListener('mousedown', (e) => {
+                isDragging = true;
+                updateSlider(e.clientX);
+            });
+
+            window.addEventListener('mousemove', (e) => {
+                if (isDragging) updateSlider(e.clientX);
+            });
+
+            window.addEventListener('mouseup', () => {
+                isDragging = false;
+            });
+        }
+
+        initSlider('miniVolume');
+        initSlider('mainProgress');
+        // 7. MAXIMIZE FEATURE (USE ONLY THIS SYSTEM)
+document.getElementById('maximizeBtn').addEventListener('click', () => {
+    document.getElementById('fullPlayerPage').classList.add('active');
+});
+
+document.getElementById('closeFullPlayer').addEventListener('click', () => {
+    document.getElementById('fullPlayerPage').classList.remove('active');
+});
+
+    </script>
+</body>
+</html>

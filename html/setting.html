@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Echo - Settings</title>
+    <link rel="stylesheet" href="../css/home.css">
+    <link rel="stylesheet" href="../css/setting.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+
+    <aside class="sidebar">
+        <div class="logo">
+            <div class="logo-icon"><i data-lucide="rss"></i></div>
+            <span>Echo</span>
+        </div>
+        <nav class="nav">
+            <div class="nav-item" onclick="location.href='home.html'"><i data-lucide="home"></i><span>Home</span></div>
+            <div class="nav-item" onclick="location.href='explore.html'"><i data-lucide="compass"></i><span>Explore</span></div>
+            <div class="nav-item" onclick="location.href='library.html'"><i data-lucide="library"></i><span>Library</span></div>
+            <div class="nav-item active" onclick="location.href='setting.html'"><i data-lucide="settings"></i><span>Settings</span></div>
+        </nav>
+    </aside>
+
+    <main class="main-content">
+        <header class="settings-header">
+            <h1>Settings</h1>
+            <p class="subtitle">Customize your Echo experience</p>
+        </header>
+
+        <section class="settings-section">
+            <h3>Account</h3>
+            <div class="settings-card" onclick="alert('Profile clicked')">
+                <div class="card-icon"><i data-lucide="user"></i></div>
+                <div class="card-text">
+                    <h5>Profile</h5>
+                    <p>Manage your account settings</p>
+                </div>
+            </div>
+            <div class="settings-card no-hover">
+                <div class="card-icon"><i data-lucide="bell"></i></div>
+                <div class="card-text">
+                    <h5>Notifications</h5>
+                    <p>Control your notification preferences</p>
+                </div>
+                <label class="switch">
+                    <input type="checkbox" checked>
+                    <span class="slider"></span>
+                </label>
+            </div>
+        </section>
+
+        <section class="settings-section">
+            <h3>Playback</h3>
+            <div class="settings-card">
+                <div class="card-icon"><i data-lucide="volume-2"></i></div>
+                <div class="card-text">
+                    <h5>Audio Quality</h5>
+                    <p>High quality streaming</p>
+                </div>
+            </div>
+            <div class="settings-card">
+                <div class="card-icon"><i data-lucide="moon"></i></div>
+                <div class="card-text">
+                    <h5>Sleep Timer</h5>
+                    <p>Auto-pause after set time</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="settings-section">
+            <h3>Privacy & Support</h3>
+            <div class="settings-card">
+                <div class="card-icon"><i data-lucide="shield"></i></div>
+                <div class="card-text">
+                    <h5>Privacy</h5>
+                    <p>Manage your data and privacy</p>
+                </div>
+            </div>
+            <div class="settings-card">
+                <div class="card-icon"><i data-lucide="help-circle"></i></div>
+                <div class="card-text">
+                    <h5>Help & Support</h5>
+                    <p>Get help with Echo</p>
+                </div>
+            </div> 
+            <br>
+            <div class="settings-card sign-out pt-5">
+                <div class="card-icon"><i data-lucide="log-out"></i></div>
+                <div class="card-text">
+                    <h5 >Sign Out</h5>
+                </div>
+            </div>
+        </section>
+
+        <footer class="settings-footer">
+            Echo v1.0.0 • Made with 💜
+        </footer>
+    </main>
+
+    <nav class="bottom-navbar">
+        <div class="bottom-nav-item" onclick="location.href='home.html'"><i data-lucide="home"></i><span>Home</span></div>
+        <div class="bottom-nav-item" onclick="location.href='explore.html'"><i data-lucide="compass"></i><span>Explore</span></div>
+        <div class="bottom-nav-item" onclick="location.href='library.html'"><i data-lucide="library"></i><span>Library</span></div>
+        <div class="bottom-nav-item active" onclick="location.href='setting.html'"><i data-lucide="settings"></i><span>Settings</span></div>
+    </nav>
+
+    <div class="playback-status-bar">
+        <span>Select an episode to start listening</span>
+    </div>
+
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>

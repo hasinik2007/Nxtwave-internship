@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Echo - The Daily Tech</title>
+    <link rel="stylesheet" href="../css/home.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+
+    <aside class="sidebar">
+        <div class="logo">
+            <div class="logo-icon"><i data-lucide="rss"></i></div>
+            <span>Echo</span>
+        </div>
+
+        <nav class="nav">
+            <div class="nav-item active" onclick="location.href='home.html'"><i data-lucide="home"></i><span>Home</span></div>
+            <div class="nav-item"  onclick="location.href='explore.html'"><i data-lucide="compass"></i><span>Explore</span></div>
+           <div class="nav-item" onclick="location.href='library.html'"><i data-lucide="library"></i><span>Library</span></div>
+           <div class="nav-item" onclick="location.href='setting.html'"><i data-lucide="settings"></i><span>Settings</span></div>
+        </nav>
+    </aside>
+
+    <main class="main-content">
+        <section class="hero">
+            <div class="hero-overlay">
+                <span class="pill">● Daily Mix</span>
+                <h1>The Daily Tech</h1>
+                <p class="author">Sarah Chen</p>
+                <p class="description">
+                    Your daily dose of technology news, trends, and insights from Silicon Valley and beyond.
+                </p>
+                <div class="hero-btns">
+                    <button class="btn-play" id="listenNowBtn">▶ Listen Now</button>
+                 <a href="one.html" style="text-decoration: none; color: inherit;">  
+                    <button class="btn-view">View Show</button>
+                </a>  
+                </div>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <div class="section-header">
+    <h2>Trending Now</h2>
+    <a href="explore.html" class="see-all" style="text-decoration: none;">See all ›</a>
+</div>
+            
+            <div class="grid-6">
+            <a href="one.html" style="text-decoration: none; color: inherit;">
+                <div class="card selectable-card">
+                    <div class="img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=400">
+                        <div class="play-button-overlay">▶</div>
+                    </div>
+                    <h4 class="card-title">The Daily Tech</h4>
+                    <p class="para">Sarah Chen</p>
+                </div>
+            </a>
+             <a href="mystery.html" style="text-decoration: none; color: inherit;">
+                <div class="card selectable-card">
+                    <div class="img-wrapper">
+                        <img src="https://miro.medium.com/v2/resize:fit:1100/format:webp/0*fiYTM_g8LRU-oEEw">
+                        <div class="play-button-overlay">▶</div>
+                    </div>
+                    <h4 class="card-title">Mystery Files</h4>
+                    <p class="para">Detective Audio</p>
+                </div>
+            </a>
+             <a href="laugh.html" style="text-decoration: none; color: inherit;">
+                <div class="card selectable-card">
+                    <div class="img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1527224538127-2104bb71c51b?w=400">
+                        <div class="play-button-overlay">▶</div>
+                    </div>
+                    <h4 class="card-title">Laugh Track</h4>
+                    <p class="para">Comedy Central</p>
+                </div>
+            </a>
+             <a href="science.html" style="text-decoration: none; color: inherit;">
+                <div class="card selectable-card">
+                    <div class="img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1507413245164-6160d8298b31?w=400">
+                        <div class="play-button-overlay">▶</div>
+                    </div>
+                    <h4 class="card-title">Science Unlocked</h4>
+                    <p class="para">Dr. Maya Williams</p>
+                </div>
+            </a>
+            <a href="morning.html" style="text-decoration: none; color: inherit;">
+                <div class="card selectable-card">
+                    <div class="img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1504711434969-e33886168f5c?w=400">
+                        <div class="play-button-overlay">▶</div>
+                    </div>
+                    <h4 class="card-title">Morning Briefing</h4>
+                    <p class="para">Global News Network</p>
+                </div>
+            </a>
+             <a href="startup.html" style="text-decoration: none; color: inherit;">
+                <div class="card selectable-card">
+                    <div class="img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1556761175-4b46a572b786?w=400">
+                        <div class="play-button-overlay">▶</div>
+                    </div>
+                    <h4 class="card-title">Startup Stories</h4>
+                    <p class="para">Venture Voice</p>
+                </div>
+            </a>
+            </div>
+        
+        </section>
+
+        <section class="content-section">
+            <h2>Continue Listening</h2>
+            <div class="grid-4">
+                <div class="wide-card selectable-card podcast-card" id="card1">
+                    <div class="wide-img-container">
+                        <img src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=400">
+                        <div class="play-button-overlay small-play">▶</div>
+                    </div>
+                    <div class="wide-info">
+                        <h5 class="card-title">The AI Revolution: What's Next?</h5>
+                        <p>The Daily Tech</p>
+                        <div class="meta-row">
+                            <span>2024-01-15</span>
+                            <span><i data-lucide="clock" class="meta-icon"></i>45:32</span>
+                        </div>
+                    </div>
+                    <div class="playing-bars"><div class="bar"></div><div class="bar"></div><div class="bar"></div></div>
+                </div>
+                <div class="wide-card selectable-card podcast-card" id="card2">
+                    <div class="wide-img-container">
+                        <img src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=400">
+                        <div class="play-button-overlay small-play">▶</div>
+                    </div>
+                    <div class="wide-info">
+                        <h5 class="card-title">Apple Vision Pro: First Impressions</h5>
+                        <p>The Daily Tech</p>
+                        <div class="meta-row">
+                            <span>2024-01-12</span>
+                            <span><i data-lucide="clock" class="meta-icon"></i>38:15</span>
+                        </div>
+                    </div>
+                    <div class="playing-bars"><div class="bar"></div><div class="bar"></div><div class="bar"></div></div>
+                </div>
+                <div class="wide-card selectable-card podcast-card" id="card3">
+                    <div class="wide-img-container">
+                        <img src="https://images.unsplash.com/photo-1509475826633-fed577a2c71b?w=400">
+                        <div class="play-button-overlay small-play">▶</div>
+                    </div>
+                    <div class="wide-info">
+                        <h5 class="card-title">The Disappearance of Flight 370</h5>
+                        <p>Mystery Files</p>
+                        <div class="meta-row">
+                            <span>2024-01-14</span>
+                            <span><i data-lucide="clock" class="meta-icon"></i>52:48</span>
+                        </div>
+                    </div>
+                    <div class="playing-bars"><div class="bar"></div><div class="bar"></div><div class="bar"></div></div>
+                </div>
+                <div class="wide-card selectable-card podcast-card" id="card4">
+                    <div class="wide-img-container">
+                        <img src="https://images.unsplash.com/photo-1527224538127-2104bb71c51b?w=400">
+                        <div class="play-button-overlay small-play">▶</div>
+                    </div>
+                    <div class="wide-info">
+                        <h5 class="card-title">Comedy Gold: Best of 2023</h5>
+                        <p>Laugh Track</p>
+                        <div class="meta-row">
+                            <span>2024-01-10</span>
+                            <span><i data-lucide="clock" class="meta-icon"></i>1:02:30</span>
+                        </div>
+                    </div>
+                    <div class="playing-bars"><div class="bar"></div><div class="bar"></div><div class="bar"></div></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-section new-releases-section">
+            <div class="section-header">
+    <h2>New Releases</h2>
+    <a href="explore.html" class="see-all" style="text-decoration: none;">See all ›</a>
+</div>
+            <div class="grid-6">
+            <a href="laugh.html" style="text-decoration: none; color: inherit;">
+                <div class="card selectable-card">
+                    <div class="img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1527224538127-2104bb71c51b?w=400">
+                        <div class="play-button-overlay">▶</div>
+                    </div>
+                    <h4 class="card-title">Laugh Track</h4>
+                    <p class="para">Comedy Central</p>
+                </div>
+            </a>
+             <a href="science.html" style="text-decoration: none; color: inherit;">
+                <div class="card selectable-card">
+                    <div class="img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1507413245164-6160d8298b31?w=400">
+                        <div class="play-button-overlay">▶</div>
+                    </div>
+                    <h4 class="card-title">Science Unlocked</h4>
+                    <p class="para">Dr. Maya Williams</p>
+                </div>
+            </a>
+            <a href="morning.html" style="text-decoration: none; color: inherit;">
+                <div class="card selectable-card">
+                    <div class="img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1504711434969-e33886168f5c?w=400">
+                        <div class="play-button-overlay">▶</div>
+                    </div>
+                    <h4 class="card-title">Morning Briefing</h4>
+                    <p class="para">Global News Network</p>
+                </div>
+            </a>
+            <a href="startup.html" style="text-decoration: none; color: inherit;">
+                <div class="card selectable-card">
+                    <div class="img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1556761175-4b46a572b786?w=400">
+                        <div class="play-button-overlay">▶</div>
+                    </div>
+                    <h4 class="card-title">Startup Stories</h4>
+                    <p class="para">Venture Voice</p>
+                </div>
+            </a>
+             <a href="mindful.html" style="text-decoration: none; color: inherit;">
+                <div class="card selectable-card">
+                    <div class="img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=400">
+                        <div class="play-button-overlay">▶</div>
+                    </div>
+                    <h4 class="card-title">Mindful Moments</h4>
+                    <p class="para">Wellness Weekly</p>
+                </div>
+            </a>
+            <a href="future.html" style="text-decoration: none; color: inherit;">
+                <div class="card selectable-card">
+                    <div class="img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=400">
+                        <div class="play-button-overlay">▶</div>
+                    </div>
+                    <h4 class="card-title">Future Forward</h4>
+                    <p class="para">Innovation Lab</p>
+                </div>
+            </a>
+            </div>
+        </section>
+
+
+
+         <section class="content-section">
+            <h2>liked episodes</h2>
+            <div class="grid-4">
+                <div class="wide-card selectable-card podcast-card" id="card1">
+                    <div class="wide-img-container">
+                        <img src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=400">
+                        <div class="play-button-overlay small-play">▶</div>
+                    </div>
+                    <div class="wide-info">
+                        <h5 class="card-title">The AI Revolution: What's Next?</h5>
+                        <p>The Daily Tech</p>
+                        <div class="meta-row">
+                            <span>2024-01-15</span>
+                            <span><i data-lucide="clock" class="meta-icon"></i>45:32</span>
+                        </div>
+                    </div>
+                    <div class="playing-bars"><div class="bar"></div><div class="bar"></div><div class="bar"></div></div>
+                </div>
+                 <div class="wide-card selectable-card podcast-card" id="card4">
+                    <div class="wide-img-container">
+                        <img src="https://images.unsplash.com/photo-1527224538127-2104bb71c51b?w=400">
+                        <div class="play-button-overlay small-play">▶</div>
+                    </div>
+                    <div class="wide-info">
+                        <h5 class="card-title">Comedy Gold: Best of 2023</h5>
+                        <p>Laugh Track</p>
+                        <div class="meta-row">
+                            <span>2024-01-10</span>
+                            <span><i data-lucide="clock" class="meta-icon"></i>1:02:30</span>
+                        </div>
+                    </div>
+                    <div class="playing-bars"><div class="bar"></div><div class="bar"></div><div class="bar"></div></div>
+                </div>
+                <div class="wide-card selectable-card podcast-card" id="card2">
+                    <div class="wide-img-container">
+                        <img src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=400">
+                        <div class="play-button-overlay small-play">▶</div>
+                    </div>
+                    <div class="wide-info">
+                        <h5 class="card-title">Apple Vision Pro: First Impressions</h5>
+                        <p>The Daily Tech</p>
+                        <div class="meta-row">
+                            <span>2024-01-12</span>
+                            <span><i data-lucide="clock" class="meta-icon"></i>38:15</span>
+                        </div>
+                    </div>
+                    <div class="playing-bars"><div class="bar"></div><div class="bar"></div><div class="bar"></div></div>
+                </div>
+                
+               
+            </div>
+        </section>
+
+    </main>
+
+    <nav class="bottom-navbar">
+        <div class="bottom-nav-item active"><i data-lucide="home"></i><span>Home</span></div>
+        <div class="bottom-nav-item"><i data-lucide="compass"></i><span>Explore</span></div>
+        <div class="bottom-nav-item"><i data-lucide="library"></i><span>Library</span></div>
+        <div class="bottom-nav-item"><i data-lucide="settings"></i><span>Settings</span></div>
+    </nav>
+
+    <div class="playback-status-bar" id="playbackBar">
+        <div class="placeholder-text" id="playerPlaceholder">
+            <span>Select an episode to start listening</span>
+        </div>
+        
+        <div class="active-player" id="miniPlayer" style="display: none; width: 100%; align-items: center; justify-content: space-between;">
+            <div class="player-info" style="display: flex; align-items: center; gap: 15px;">
+                <img src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=100" style="width: 50px; height: 50px; border-radius: 8px; object-fit: cover;">
+                <div class="text-info">
+                    <h5 class="now-playing-title" style="font-size: 16px; margin: 0;">The AI Revolution: What's Next?</h5>
+                    <p class="now-playing-subtitle" style="font-size: 13px; color: var(--text-dim); margin: 0;">The Daily Tech</p>
+                </div>
+            </div>
+            
+            <div class="player-controls" style="display: flex; align-items: center; gap: 30px;">
+                <i data-lucide="skip-back" class="control-btn" style="cursor: pointer; width: 24px; color: var(--text-dim);"></i>
+                <div class="play-pause-circle toggle-playback">
+                    <i data-lucide="pause" class="playback-icon" style="fill: white; width: 20px;"></i>
+                </div>
+                <i data-lucide="skip-forward" class="control-btn" style="cursor: pointer; width: 24px; color: var(--text-dim);"></i>
+            </div>
+            
+            <div class="player-extra" style="display: flex; align-items: center; gap: 12px; width: 240px; justify-content: flex-end;">
+                <i data-lucide="volume-2" style="width: 20px; color: var(--text-dim);"></i>
+                <div class="volume-bar-container interactive-slider" id="miniVolume">
+                    <div class="volume-progress slider-fill"></div>
+                    <div class="volume-knob slider-knob"></div>
+                </div>
+                <i data-lucide="maximize-2" id="maximizeBtn" style="width: 18px; color: var(--text-dim); margin-left: 10px; cursor: pointer;"></i>
+            </div>
+        </div>
+    </div>
+
+    <div class="full-player-page glass" id="fullPlayerPage">
+        <div class="full-player-header">
+            <i data-lucide="x" class="close-btn" id="closeFullPlayer"></i>
+            <div class="header-right">
+                <i data-lucide="share-2"></i>
+                <i data-lucide="heart"></i>
+            </div>
+        </div>
+
+        <div class="full-player-content">
+            <img src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=600" class="full-art">
+            <h2 class="full-title">The AI Revolution: What's Next?</h2>
+            <p class="full-subtitle">The Daily Tech</p>
+
+            <div class="full-progress-container">
+                <div class="full-progress-bar interactive-slider" id="mainProgress">
+                    <div class="full-progress-fill slider-fill" style="width: 25%;"></div>
+                    <div class="full-progress-knob slider-knob" style="left: 25%;"></div>
+                </div>
+                <div class="time-info">
+                    <span id="currentTimeDisplay">7:12</span>
+                    <span>45:32</span>
+                </div>
+            </div>
+
+            <div class="full-controls">
+                <i data-lucide="skip-back" class="full-ctrl-icon"></i>
+                <div class="full-play-pause toggle-playback">
+                    <i data-lucide="pause" class="playback-icon"></i>
+                </div>
+                <i data-lucide="skip-forward" class="full-ctrl-icon"></i>
+            </div>
+
+            <div class="full-footer">
+                <div class="badge" id="speedToggle" style="cursor: pointer;">1x</div>
+                <div class="full-volume-section">
+                    <i data-lucide="volume-2"></i>
+                    <div class="full-volume-bar interactive-slider" id="fullVolume">
+                        <div class="full-volume-fill slider-fill" style="width: 70%;"></div>
+                        <div class="full-volume-knob slider-knob" style="left: 70%;"></div>
+                    </div>
+                    <span class="vol-text" id="volPercentDisplay">70%</span>
+                </div>
+                <i data-lucide="moon"></i>
+                <i data-lucide="list"></i>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        lucide.createIcons();
+
+        let isPlaying = true;
+        const speeds = [0.5, 1, 1.25, 1.5, 1.75, 2];
+        let speedIndex = 1;
+
+        const navItems = document.querySelectorAll('.nav-item, .bottom-nav-item');
+        navItems.forEach(item => {
+            item.addEventListener('click', () => {
+                document.querySelectorAll('.nav-item, .bottom-nav-item').forEach(i => i.classList.remove('active'));
+                item.classList.add('active');
+            });
+        });
+
+        const toggleButtons = document.querySelectorAll('.toggle-playback');
+        toggleButtons.forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                isPlaying = !isPlaying;
+                const newIcon = isPlaying ? 'pause' : 'play';
+                document.querySelectorAll('.playback-icon').forEach(icon => {
+                    icon.setAttribute('data-lucide', newIcon);
+                    if (icon.classList.contains('pause-icon')) {
+                        icon.style.fill = isPlaying ? 'white' : 'none';
+                    }
+                });
+                document.querySelectorAll('.bar').forEach(bar => {
+                    bar.style.animationPlayState = isPlaying ? 'running' : 'paused';
+                });
+                lucide.createIcons();
+            });
+        });
+
+        const speedBtn = document.getElementById('speedToggle');
+        speedBtn.addEventListener('click', () => {
+            speedIndex = (speedIndex + 1) % speeds.length;
+            speedBtn.innerText = speeds[speedIndex] + 'x';
+        });
+
+        const activatePlayer = () => {
+            document.getElementById('playerPlaceholder').style.display = 'none';
+            document.getElementById('miniPlayer').style.display = 'flex';
+        }
+
+        document.getElementById('listenNowBtn').addEventListener('click', () => {
+            activatePlayer();
+            document.querySelectorAll('.podcast-card').forEach(c => c.classList.remove('active-playing'));
+            document.getElementById('card1').classList.add('active-playing');
+        });
+
+       document.querySelectorAll('.podcast-card').forEach(card => {
+    card.addEventListener('click', () => {
+        // 1. UI styling: show which card is selected
+        document.querySelectorAll('.podcast-card').forEach(c => c.classList.remove('active-playing'));
+        card.classList.add('active-playing');
+
+        // 2. DATA GRABBING: Get details from the card you clicked
+        const title = card.querySelector('.card-title').innerText;
+        const author = card.querySelector('p').innerText;
+        const imgSrc = card.querySelector('img').src;
+        const duration = card.querySelector('.meta-row span:last-child').innerText;
+
+        // 3. MINI PLAYER UPDATE: Update the bottom bar
+        const mini = document.getElementById('miniPlayer');
+        mini.querySelector('.now-playing-title').innerText = title;
+        mini.querySelector('.now-playing-subtitle').innerText = author;
+        mini.querySelector('img').src = imgSrc;
+
+        // 4. FULL PLAYER UPDATE: Update the big overlay
+        const full = document.getElementById('fullPlayerPage');
+        full.querySelector('.full-title').innerText = title;
+        full.querySelector('.full-subtitle').innerText = author;
+        full.querySelector('.full-art').src = imgSrc;
+        // Update the duration (last span in time-info)
+        full.querySelector('.time-info span:last-child').innerText = duration;
+
+        // 5. Open the player
+        activatePlayer();
+    });
+});
+
+        document.getElementById('maximizeBtn').addEventListener('click', () => {
+            document.getElementById('fullPlayerPage').classList.add('active');
+        });
+
+        document.getElementById('closeFullPlayer').addEventListener('click', () => {
+            document.getElementById('fullPlayerPage').classList.remove('active');
+        });
+
+        function initSlider(containerId, isVolume = false) {
+            const container = document.getElementById(containerId);
+            const fill = container.querySelector('.slider-fill');
+            const knob = container.querySelector('.slider-knob');
+            let isDragging = false;
+
+            const updateSlider = (clientX) => {
+                const rect = container.getBoundingClientRect();
+                let percent = (clientX - rect.left) / rect.width;
+                percent = Math.max(0, Math.min(1, percent));
+                
+                const val = (percent * 100).toFixed(0);
+                fill.style.width = val + '%';
+                knob.style.left = val + '%';
+
+                if (isVolume && containerId === 'fullVolume') {
+                    document.getElementById('volPercentDisplay').innerText = val + '%';
+                } else if (containerId === 'mainProgress') {
+                    const totalSeconds = 2732;
+                    const currentSeconds = Math.floor(percent * totalSeconds);
+                    const mins = Math.floor(currentSeconds / 60);
+                    const secs = (currentSeconds % 60).toString().padStart(2, '0');
+                    document.getElementById('currentTimeDisplay').innerText = `${mins}:${secs}`;
+                }
+            };
+
+            container.addEventListener('mousedown', (e) => {
+                isDragging = true;
+                updateSlider(e.clientX);
+            });
+
+            window.addEventListener('mousemove', (e) => {
+                if (isDragging) updateSlider(e.clientX);
+            });
+
+            window.addEventListener('mouseup', () => {
+                isDragging = false;
+            });
+        }
+
+        initSlider('mainProgress');
+        initSlider('miniVolume', true);
+        initSlider('fullVolume', true);
+
+    </script>
+</body>
+</html>

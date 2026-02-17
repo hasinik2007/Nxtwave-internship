@@ -1,0 +1,128 @@
+/* --- SETTINGS CONTENT AREA --- */
+.main-content {
+    margin-left: 320px;
+    padding: 40px 50px 180px; 
+}
+
+.settings-header h1 {
+    font-size: 38px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    color: #94a3b8;
+    font-size: 16px;
+    margin-bottom: 40px;
+}
+
+/* --- SETTINGS SECTIONS --- */
+.settings-section {
+    margin-bottom: 35px;
+}
+
+.settings-section h3 {
+    color: #fff;
+    font-size: 18px;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.settings-card {
+    background: rgba(30, 41, 59, 0.4);
+    border-radius: 15px;
+    padding: 15px 20px;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+    position: relative;
+    max-width: 600px; /* Aligns with your reference image width */
+}
+
+.settings-card:hover:not(.no-hover) {
+    background: rgba(30, 41, 59, 0.7);
+    transform: translateX(5px);
+}
+
+.card-icon {
+    width: 40px;
+    height: 40px;
+    background: #1B2637;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #94a3b8;
+}
+
+.card-text h5 {
+    color: #fff;
+    font-size: 15px;
+    margin-bottom: 2px;
+}
+
+.card-text p {
+    color: #94a3b8;
+    font-size: 13px;
+}
+
+/* --- SPECIAL CARDS --- */
+.sign-out {
+    background: rgba(239, 68, 68, 0.1);
+}
+
+.sign-out h5 {
+    color: #ef4444;
+}
+
+.sign-out .card-icon {
+    color: #ef4444;
+}
+
+.settings-footer {
+    margin-top: 50px;
+    color: #64748b;
+    font-size: 12px;
+    text-align: center;
+    max-width: 600px;
+}
+
+/* --- TOGGLE SWITCH --- */
+.switch {
+    position: absolute;
+    right: 20px;
+    width: 44px;
+    height: 24px;
+}
+
+.switch input { display: none; }
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-color: #334155;
+    transition: .4s;
+    border-radius: 34px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 18px; width: 18px;
+    left: 3px; bottom: 3px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+}
+
+input:checked + .slider {
+    background-color: #8b5cf6; /* Matches your accent purple */
+}
+
+input:checked + .slider:before {
+    transform: translateX(20px);
+}

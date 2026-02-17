@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Echo - Morning Briefing</title>
+    <link rel="stylesheet" href="../css/home.css">
+    <link rel="stylesheet" href="../css/morning.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+
+    <input type="radio" name="episode-select" id="ep-1" hidden>
+
+    <aside class="sidebar">
+        <div class="logo">
+            <div class="logo-icon"><i data-lucide="rss"></i></div>
+            <span>Echo</span>
+        </div>
+        <nav class="nav">
+            <div class="nav-item" onclick="location.href='home.html'"><i data-lucide="home"></i><span>Home</span></div>
+            <div class="nav-item active" onclick="location.href='explore.html'"><i data-lucide="compass"></i><span>Explore</span></div>
+            <div class="nav-item" onclick="location.href='library.html'"><i data-lucide="library"></i><span>Library</span></div>
+            <div class="nav-item" onclick="location.href='setting.html'"><i data-lucide="settings"></i><span>Settings</span></div>
+        </nav>
+    </aside>
+
+    <main class="main-content">
+        <a href="home.html" class="back-link">
+            <i class="fa-solid fa-chevron-left"></i> Back
+        </a>
+
+        <section class="podcast-header">
+            <img src="https://images.unsplash.com/photo-1504711434969-e33886168f5c?w=400&h=400&fit=crop" alt="Morning Briefing" class="podcast-image">
+            <div class="podcast-details">
+                <span class="category-tag">News</span>
+                <h1>Morning Briefing</h1>
+                <p class="author-name">Global News Network</p>
+                <div class="stats-bar">
+                    <span><i class="fa-solid fa-users stat-icon"></i> 3.1M subscribers</span>
+                    <span><i class="fa-solid fa-headphones stat-icon"></i> 520 episodes</span>
+                </div>
+                <div class="podcast-actions">
+                    <button class="play-latest-btn gradient-btn" id="playLatestBtn">▶ Latest Episode</button>
+                    <button class="sub-btn outline-purple"><i class="fa-regular fa-heart"></i> Subscribe</button>
+                    <button class="share-btn large-share"><i class="fa-solid fa-share-nodes"></i></button>
+                </div>
+            </div>
+        </section>
+
+        <input type="radio" name="tabs" id="tab-episodes" checked hidden>
+        <input type="radio" name="tabs" id="tab-about" hidden>
+
+        <div class="page-tabs">
+            <label for="tab-episodes" class="tab-label">Episodes</label>
+            <label for="tab-about" class="tab-label">About</label>
+        </div>
+
+        <div class="tab-content">
+            <section id="episodes-list" class="content-panel">
+                <label for="ep-1" class="episode-row" id="card-1">
+                    <span class="episode-num">1</span>
+                    <div class="episode-content">
+                        <h4 class="ep-title">Global Markets Update: January 2024</h4>
+                        <p>Morning Briefing</p>
+                        <div class="episode-info-bar">
+                            <span>2024-01-15</span>
+                            <span><i class="fa-regular fa-clock meta-icon"></i> 28:45</span>
+                        </div>
+                    </div>
+                    <div class="playing-bars"><span></span><span></span><span></span></div>
+                </label>
+            </section>
+            
+            <section id="about-info" class="content-panel">
+                <h3>About this show</h3>
+                <p class="show-description">
+                    Start your day informed with comprehensive news coverage from around the world.
+                </p>
+                <div class="host-section">
+                    <h4>Host</h4>
+                    <div class="host-card">
+                        <div class="host-avatar-circle"></div>
+                        <div class="host-text">
+                            <p class="host-name">Global News Network</p>
+                            <p class="host-title">Creator & Host</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <div class="playback-status-bar" id="playbackBar">
+        <div class="playback-progress-top">
+            <input type="range" class="progress-slider" id="mainProgress" value="0" min="0" max="100">
+            <div class="progress-fill-top" id="progressFill"></div>
+        </div>
+
+        <div class="placeholder-text" id="playerPlaceholder">
+            <span>Select an episode to start listening</span>
+        </div>
+        
+        <div class="active-player" id="miniPlayer" style="display: none; width: 100%; align-items: center; justify-content: space-between;">
+            <div class="player-info" style="display: flex; align-items: center; gap: 15px;">
+                <img src="https://images.unsplash.com/photo-1504711434969-e33886168f5c?w=400&h=400&fit=crop" style="width: 50px; height: 50px; border-radius: 8px; object-fit: cover;">
+                <div class="text-info">
+                    <h5 class="now-playing-title" id="dynamic-title" style="font-size: 16px; margin: 0; color: white;"></h5>
+                    <p class="now-playing-subtitle" id="dynamic-subtitle" style="font-size: 13px; color: var(--text-dim); margin: 0;">Morning Briefing</p>
+                </div>
+            </div>
+            
+            <div class="player-controls" style="display: flex; align-items: center; gap: 30px;">
+                <i data-lucide="skip-back" class="control-btn" style="cursor: pointer; width: 24px; color: var(--text-dim);"></i>
+                <div class="play-pause-circle" id="masterPlayBtn">
+                    <i data-lucide="pause" id="playIcon" style="fill: white; width: 20px;"></i>
+                </div>
+                <i data-lucide="skip-forward" class="control-btn" style="cursor: pointer; width: 24px; color: var(--text-dim);"></i>
+            </div>
+            
+            <div class="player-extra" style="display: flex; align-items: center; gap: 12px; width: 240px; justify-content: flex-end;">
+                <div class="speed-btn" id="speedToggle" style="cursor:pointer; user-select:none;">1x</div>
+                <i data-lucide="volume-2" style="width: 20px; color: var(--text-dim);"></i>
+                <div class="volume-bar-container">
+                    <div class="slider-fill" style="width:70%"></div>
+                    <div class="slider-knob" style="left:70%"></div>
+                </div>
+                <i data-lucide="maximize-2" id="maximizeBtn" style="width: 18px; color: var(--text-dim); margin-left: 10px; cursor: pointer;"></i>
+            </div>
+        </div>
+    </div>
+
+    <div class="full-player-page glass" id="fullPlayerPage">
+        <div class="full-player-header">
+            <i data-lucide="x" class="close-btn" id="closeFullPlayer"></i>
+            <div class="header-right">
+                <i data-lucide="share-2"></i>
+                <i data-lucide="heart"></i>
+            </div>
+        </div>
+        <div class="full-player-content">
+            <img src="https://images.unsplash.com/photo-1504711434969-e33886168f5c?w=600" class="full-art">
+            <h2 class="full-title" id="full-player-title">Episode Title</h2>
+            <p class="full-subtitle">Morning Briefing</p>
+            <div class="full-progress-container">
+                <input type="range" class="full-slider" id="fullProgressSlider" value="0" min="0" max="100">
+                <div class="full-progress-bar"><div class="full-progress-fill" id="fullFill"></div></div>
+                <div class="time-info"><span id="currentTime">0:00</span><span id="full-player-duration">28:45</span></div>
+            </div>
+            <div class="full-controls">
+                <i data-lucide="skip-back" class="full-ctrl-icon"></i>
+                <div class="full-play-pause" id="fullPlayBtn"><i data-lucide="pause" style="fill: white;"></i></div>
+                <i data-lucide="skip-forward" class="full-ctrl-icon"></i>
+            </div>
+            <div class="extra-controls-row">
+                <div class="speed-btn full-speed">1x</div>
+                <div class="vol-control">
+                    <i data-lucide="volume-1"></i>
+                    <div class="vol-slider"></div>
+                </div>
+                <i data-lucide="moon"></i>
+                <i data-lucide="file-text"></i>
+            </div>
+        </div>
+    </div>
+
+    <script>
+    lucide.createIcons();
+
+    const radios = document.querySelectorAll('input[name="episode-select"]');
+    const placeholder = document.getElementById('playerPlaceholder');
+    const miniPlayer = document.getElementById('miniPlayer');
+    const dynamicTitle = document.getElementById('dynamic-title');
+    const fullTitle = document.getElementById('full-player-title');
+    const fullDuration = document.getElementById('full-player-duration');
+    const currentTimeDisplay = document.getElementById('currentTime');
+
+    const mainProgress = document.getElementById('mainProgress');
+    const progressFill = document.getElementById('progressFill');
+    const fullProgressSlider = document.getElementById('fullProgressSlider');
+    const fullFill = document.getElementById('fullFill');
+
+    const masterPlayBtn = document.getElementById('masterPlayBtn');
+    const fullPlayBtn = document.getElementById('fullPlayBtn');
+    const playLatestBtn = document.getElementById('playLatestBtn');
+
+    const speedToggle = document.getElementById('speedToggle');
+    const fullSpeed = document.querySelector('.full-speed');
+
+    const speeds = ['1x', '1.25x', '1.5x', '1.75x', '2x'];
+    let speedIndex = 0;
+
+    let isPlaying = true;
+    let progressInterval = null;
+    let currentEpisode = null; 
+    let currentSeconds = 0;
+    let totalSeconds = 0;
+
+    function handleEpisodeSelect(id) {
+        currentEpisode = id;
+        placeholder.style.display = 'none';
+        miniPlayer.style.display = 'flex';
+
+        const title = "Global Markets Update: January 2024";
+        const dur = "28:45";
+
+        dynamicTitle.innerText = title;
+        fullTitle.innerText = title;
+        fullDuration.innerText = dur;
+
+        currentSeconds = 0;
+        updateProgress(0);
+        stopAutoProgress();
+
+        if (isPlaying) {
+            startAutoProgress();
+            showSelectedBars();
+        }
+    }
+
+    radios.forEach(radio => {
+        radio.addEventListener('change', () => handleEpisodeSelect(radio.id));
+    });
+
+    playLatestBtn.onclick = () => {
+        document.getElementById('ep-1').checked = true;
+        handleEpisodeSelect('ep-1');
+    };
+
+    function showSelectedBars() {
+        document.querySelectorAll('.playing-bars').forEach(bar => {
+            bar.style.display = 'none';
+        });
+        if (!currentEpisode) return;
+        const selectedCard = document.querySelector(`label[for="${currentEpisode}"] .playing-bars`);
+        if (selectedCard && isPlaying) {
+            selectedCard.style.display = 'flex';
+        }
+    }
+
+    function rotateSpeed() {
+        speedIndex = (speedIndex + 1) % speeds.length;
+        speedToggle.innerText = speeds[speedIndex];
+        fullSpeed.innerText = speeds[speedIndex];
+    }
+
+    speedToggle.onclick = rotateSpeed;
+    fullSpeed.onclick = rotateSpeed;
+
+    function togglePlay() {
+        isPlaying = !isPlaying;
+        const iconName = isPlaying ? 'pause' : 'play';
+        masterPlayBtn.innerHTML = `<i data-lucide="${iconName}" style="fill: white; width: 20px;"></i>`;
+        fullPlayBtn.innerHTML = `<i data-lucide="${iconName}" style="fill: white;"></i>`;
+        lucide.createIcons();
+
+        if (isPlaying) {
+            startAutoProgress();
+            showSelectedBars();
+        } else {
+            stopAutoProgress();
+            document.querySelectorAll('.playing-bars').forEach(bar => {
+                bar.style.display = 'none';
+            });
+        }
+    }
+
+    masterPlayBtn.onclick = togglePlay;
+    fullPlayBtn.onclick = togglePlay;
+
+    function startAutoProgress() {
+        clearInterval(progressInterval);
+        const parts = fullDuration.innerText.split(':').map(Number);
+        totalSeconds = parts[0] * 60 + parts[1];
+
+        progressInterval = setInterval(() => {
+            if (currentSeconds >= totalSeconds) {
+                stopAutoProgress();
+                return;
+            }
+            currentSeconds++;
+            const percent = (currentSeconds / totalSeconds) * 100;
+            updateProgress(percent);
+        }, 1000);
+    }
+
+    function stopAutoProgress() {
+        clearInterval(progressInterval);
+        progressInterval = null;
+    }
+
+    function updateProgress(val) {
+        mainProgress.value = val;
+        fullProgressSlider.value = val;
+        progressFill.style.width = val + '%';
+        fullFill.style.width = val + '%';
+
+        const curr = Math.floor((val / 100) * totalSeconds);
+        const m = Math.floor(curr / 60);
+        const s = (curr % 60).toString().padStart(2, '0');
+        currentTimeDisplay.innerText = m + ":" + s;
+    }
+
+    mainProgress.oninput = (e) => {
+        stopAutoProgress();
+        const percent = e.target.value;
+        currentSeconds = Math.floor((percent / 100) * totalSeconds);
+        updateProgress(percent);
+    };
+
+    fullProgressSlider.oninput = (e) => {
+        stopAutoProgress();
+        const percent = e.target.value;
+        currentSeconds = Math.floor((percent / 100) * totalSeconds);
+        updateProgress(percent);
+    };
+
+    document.getElementById('maximizeBtn').onclick = () => {
+        document.getElementById('fullPlayerPage').classList.add('active');
+    };
+
+    document.getElementById('closeFullPlayer').onclick = () => {
+        document.getElementById('fullPlayerPage').classList.remove('active'); 
+    };
+</script>
+</body>
+</html>
