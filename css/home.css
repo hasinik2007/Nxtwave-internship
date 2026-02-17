@@ -455,33 +455,93 @@ body {
     left: 0;
     width: 100%;
     height: 70px;
-    background: rgba(36, 44, 58, 0.85); 
-    backdrop-filter: blur(15px);      
+    background: rgba(36, 44, 58, 0.95);
+    backdrop-filter: blur(12px);
     border-top: 1px solid var(--border-color);
     z-index: 999;
     justify-content: space-around;
     align-items: center;
 }
 
+
 .bottom-nav-item { display: flex; flex-direction: column; align-items: center; color: var(--text-dim); font-size: 12px; gap: 6px; cursor: pointer; transition: 0.3s; }
 .bottom-nav-item:hover, .bottom-nav-item.active { color: var(--accent-purple); }
 .bottom-nav-item i { width: 22px; height: 22px; }
 
-/* --- RESPONSIVE --- */
-@media (max-width: 1024px) {
-    .sidebar { display: none; }
-    .main-content { margin-left: 0; padding-bottom: 220px; }
-    .bottom-navbar { display: flex; }
-    .grid-6 { grid-template-columns: repeat(3, 1fr); }
-    .grid-4 { grid-template-columns: repeat(2, 1fr); }
+/* ============================= */
+/* RESPONSIVE DESIGN SYSTEM */
+/* ============================= */
+
+/* ===== TABLET / MEDIUM DEVICES ===== */
+@media (max-width: 1100px) {
+
+    .sidebar {
+        display: none;
+    }
+
+    .main-content {
+        margin-left: 0;
+        padding: 30px 30px 220px;
+    }
+
+    .bottom-navbar {
+        display: flex;
+    }
+
+    .grid-6 {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .grid-4 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .hero h1 {
+        font-size: 48px;
+    }
+
+    .description {
+        font-size: 16px;
+    }
 }
 
-@media (max-width: 600px) {
-    .grid-6 { grid-template-columns: repeat(2, 1fr); }
-    .grid-4 { grid-template-columns: 1fr; }
-    .playback-status-bar { padding: 0 20px; }
-    .playback-status-bar span { font-size: 16px; }
-    .player-extra { display: none; }
+
+/* ===== MOBILE ===== */
+@media (max-width: 768px) {
+
+    .main-content {
+        padding: 20px 20px 240px;
+    }
+
+    .hero {
+        height: 360px;
+    }
+
+    .hero h1 {
+        font-size: 34px;
+    }
+
+    .description {
+        font-size: 14px;
+    }
+
+    .grid-6 {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 18px;
+    }
+
+    .grid-4 {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    .playback-status-bar {
+        padding: 0 20px;
+    }
+
+    .player-extra {
+        display: none;
+    }
 }
 
 .para {

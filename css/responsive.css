@@ -1,0 +1,42 @@
+/* ============================= */
+/* GLOBAL RESPONSIVE SYSTEM */
+/* ============================= */
+
+@media (max-width: 1100px) {
+
+    .sidebar {
+        display: none !important;
+    }
+
+    .main-content {
+        margin-left: 0 !important;
+        padding: 30px 30px 220px !important;
+    }
+
+    .bottom-navbar {
+        display: flex !important;
+    }
+
+    .grid-6 {
+        grid-template-columns: repeat(3, 1fr) !important;
+    }
+
+    .grid-4 {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+}
+
+@media (max-width: 768px) {
+
+    .grid-6 {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+
+    .grid-4 {
+        grid-template-columns: 1fr !important;
+    }
+
+    .player-extra {
+        display: none !important;
+    }
+}

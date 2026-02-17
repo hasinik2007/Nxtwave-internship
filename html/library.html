@@ -6,6 +6,7 @@
     <title>Echo - Your Library</title>
     <link rel="stylesheet" href="../css/home.css">
     <link rel="stylesheet" href="../css/library.css">
+    <link rel="stylesheet" href="../css/responsive.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/lucide@latest"></script>
     <style>
@@ -27,11 +28,7 @@
         .full-player-page.active {
             transform: translateY(0);
         }
-        .glass {
-            background: rgba(15, 23, 42, 0.8) !important;
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-        }
+        
     </style>
 </head>
 <body>
@@ -60,41 +57,41 @@
         </header>
 
         <section id="subscribed-section" class="grid-overlap">
-            <a href="one.html" style="text-decoration: none; color: inherit;"> 
-                <div class="card">
-                    <div class="img-wrapper"><img src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=400"><div class="play-button-overlay">▶</div></div>
-                    <h4 class="card-title">The Daily Tech</h4>
-                    <p class="para">Sarah Chen</p>
-                </div>
-            </a>  
-            <a href="mystery.html" style="text-decoration: none; color: inherit;">
-                <div class="card">
-                    <div class="img-wrapper"><img src="https://images.unsplash.com/photo-1509475826633-fed577a2c71b?w=400"><div class="play-button-overlay">▶</div></div>
-                    <h4 class="card-title">Mystery Files</h4>
-                    <p class="para">Detective Audio</p>
-                </div>
-            </a>
-            <a href="laugh.html" style="text-decoration: none; color: inherit;">
-                <div class="card">
-                    <div class="img-wrapper"><img src="https://images.unsplash.com/photo-1527224538127-2104bb71c51b?w=400&h=400&fit=crop"><div class="play-button-overlay">▶</div></div>
-                    <h4 class="card-title">Laugh Track</h4>
-                    <p class="para">Comedy Central</p>
-                </div>
-            </a>
-            <a href="science.html" style="text-decoration: none; color: inherit;">
-                <div class="card">
-                    <div class="img-wrapper"><img src="https://images.unsplash.com/photo-1507413245164-6160d8298b31?w=400"><div class="play-button-overlay">▶</div></div>
-                    <h4 class="card-title">Science Unlocked</h4>
-                    <p class="para">Dr. Maya Williams</p>
-                </div>
-            </a>
-            <a href="morning.html" style="text-decoration: none; color: inherit;">
-                <div class="card">
-                    <div class="img-wrapper"><img src="https://images.unsplash.com/photo-1504711434969-e33886168f5c?w=400"><div class="play-button-overlay">▶</div></div>
-                    <h4 class="card-title">Morning Briefing</h4>
-                    <p class="para">Global News Network</p>
-                </div>
-            </a>
+          <a href="one.html" style="text-decoration: none; color: inherit;">  
+            <div class="card">
+                <div class="img-wrapper"><img src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=400"><div class="play-button-overlay">▶</div></div>
+                <h4 class="card-title">The Daily Tech</h4>
+                <p class="para">Sarah Chen</p>
+            </div>
+        </a>  
+        <a href="mystery.html" style="text-decoration: none; color: inherit;">
+            <div class="card">
+                <div class="img-wrapper"><img src="https://images.unsplash.com/photo-1509475826633-fed577a2c71b?w=400"><div class="play-button-overlay">▶</div></div>
+                <h4 class="card-title">Mystery Files</h4>
+                <p class="para">Detective Audio</p>
+            </div>
+        </a>
+        <a href="laugh.html" style="text-decoration: none; color: inherit;">
+            <div class="card">
+                <div class="img-wrapper"><img src="https://images.unsplash.com/photo-1527224538127-2104bb71c51b?w=400&h=400&fit=crop"><div class="play-button-overlay">▶</div></div>
+                <h4 class="card-title">Laugh Track</h4>
+                <p class="para">Comedy Central</p>
+            </div>
+        </a>
+        <a href="science.html" style="text-decoration: none; color: inherit;">
+            <div class="card">
+                <div class="img-wrapper"><img src="https://images.unsplash.com/photo-1507413245164-6160d8298b31?w=400"><div class="play-button-overlay">▶</div></div>
+                <h4 class="card-title">Science Unlocked</h4>
+                <p class="para">Dr. Maya Williams</p>
+            </div>
+        </a>
+        <a href="morning.html" style="text-decoration: none; color: inherit;">
+            <div class="card">
+                <div class="img-wrapper"><img src="https://images.unsplash.com/photo-1504711434969-e33886168f5c?w=400"><div class="play-button-overlay">▶</div></div>
+                <h4 class="card-title">Morning Briefing</h4>
+                <p class="para">Global News Network</p>
+            </div>
+        </a>
         </section>
 
         <section id="saved-section" class="list-container" style="display: none;">
@@ -182,6 +179,34 @@
             </div>
         </section>
     </main>
+    <nav class="bottom-navbar">
+
+    <div class="bottom-nav-item"
+         onclick="location.href='home.html'">
+        <i data-lucide="home"></i>
+        <span>Home</span>
+    </div>
+
+    <div class="bottom-nav-item "
+         onclick="location.href='explore.html'">
+        <i data-lucide="compass"></i>
+        <span>Explore</span>
+    </div>
+
+    <div class="bottom-nav-item active"
+         onclick="location.href='library.html'">
+        <i data-lucide="library"></i>
+        <span>Library</span>
+    </div>
+
+    <div class="bottom-nav-item"
+         onclick="location.href='setting.html'">
+        <i data-lucide="settings"></i>
+        <span>Settings</span>
+    </div>
+
+</nav>
+
 
     <div class="playback-status-bar" id="playbackBar">
         <div class="placeholder-text" id="playerPlaceholder">
@@ -252,109 +277,145 @@
     </div>
 
     <script>
-        lucide.createIcons();
-        let isPlaying = true;
+    lucide.createIcons();
 
-        // 1. SECTION SWITCHING
-        function showSection(name, btn) {
-            document.getElementById('subscribed-section').style.display = 'none';
-            document.getElementById('saved-section').style.display = 'none';
-            document.getElementById('history-section').style.display = 'none';
-            document.querySelectorAll('.pill').forEach(p => p.classList.remove('active'));
-            document.getElementById(name + '-section').style.display = (name === 'subscribed') ? 'flex' : 'block';
-            btn.classList.add('active');
-        }
+    let isPlaying = true;
 
-        // 2. ACTIVATE PLAYER
-        const activatePlayer = (data) => {
-            document.getElementById('playerPlaceholder').style.display = 'none';
-            document.getElementById('miniPlayer').style.display = 'flex';
-            document.getElementById('miniTitle').innerText = data.title;
-            document.getElementById('miniHost').innerText = data.host;
-            document.getElementById('miniImg').src = data.img;
-            document.getElementById('fullTitle').innerText = data.title;
-            document.getElementById('fullHost').innerText = data.host;
-            document.getElementById('fullImg').src = data.img;
+    // ==============================
+    // 1. SECTION SWITCHING
+    // ==============================
+    function showSection(name, btn) {
+        document.getElementById('subscribed-section').style.display = 'none';
+        document.getElementById('saved-section').style.display = 'none';
+        document.getElementById('history-section').style.display = 'none';
+
+        document.querySelectorAll('.pill').forEach(p => p.classList.remove('active'));
+
+        document.getElementById(name + '-section').style.display =
+            (name === 'subscribed') ? 'flex' : 'block';
+
+        btn.classList.add('active');
+    }
+
+    // ==============================
+    // 2. ACTIVATE PLAYER
+    // ==============================
+    const activatePlayer = () => {
+        document.getElementById('playerPlaceholder').style.display = 'none';
+        document.getElementById('miniPlayer').style.display = 'flex';
+    };
+
+    // ==============================
+    // 3. CARD CLICK LOGIC
+    // ==============================
+    document.querySelectorAll('.list-card').forEach(card => {
+
+
+        card.addEventListener('click', function (e) {
+
+            // Prevent anchor navigation
+            e.preventDefault();
+            e.stopPropagation();
+
+            const titleEl = card.querySelector('h5') || card.querySelector('.card-title');
+            const hostEl = card.querySelector('.host') || card.querySelector('.para');
+            const imgEl = card.querySelector('img');
+
+            if (!titleEl || !hostEl || !imgEl) return;
+
+            const title = titleEl.innerText;
+            const host = hostEl.innerText;
+            const img = imgEl.src;
+
+            // Mini Player Update
+            document.getElementById('miniTitle').innerText = title;
+            document.getElementById('miniHost').innerText = host;
+            document.getElementById('miniImg').src = img;
+
+            // Full Player Update
+            document.getElementById('fullTitle').innerText = title;
+            document.getElementById('fullHost').innerText = host;
+            document.getElementById('fullImg').src = img;
+
+            activatePlayer();
+        });
+
+    });
+
+    // ==============================
+    // 4. MAXIMIZE / MINIMIZE
+    // ==============================
+    document.getElementById('maximizeBtn').addEventListener('click', function (e) {
+        e.stopPropagation();
+        document.getElementById('fullPlayerPage').classList.add('active');
+    });
+
+    document.getElementById('closeFullPlayer').addEventListener('click', function () {
+        document.getElementById('fullPlayerPage').classList.remove('active');
+    });
+
+    // ==============================
+    // 5. PLAY / PAUSE SYNC
+    // ==============================
+    document.querySelectorAll('.toggle-playback').forEach(btn => {
+        btn.addEventListener('click', function (e) {
+            e.stopPropagation();
+            isPlaying = !isPlaying;
+
+            const newIcon = isPlaying ? 'pause' : 'play';
+
+            document.querySelectorAll('.playback-icon').forEach(icon => {
+                icon.setAttribute('data-lucide', newIcon);
+                icon.style.fill = isPlaying ? 'white' : 'none';
+            });
+
             lucide.createIcons();
+        });
+    });
+
+    // ==============================
+    // 6. SLIDER SYSTEM
+    // ==============================
+    function initSlider(containerId) {
+
+        const container = document.getElementById(containerId);
+        if (!container) return;
+
+        const fill = container.querySelector('.slider-fill');
+        const knob = container.querySelector('.slider-knob');
+
+        let isDragging = false;
+
+        const updateSlider = (clientX) => {
+
+            const rect = container.getBoundingClientRect();
+            let percent = (clientX - rect.left) / rect.width;
+            percent = Math.max(0, Math.min(1, percent));
+
+            const value = (percent * 100).toFixed(0);
+
+            fill.style.width = value + '%';
+            knob.style.left = value + '%';
         };
 
-        // 3. ATTACH CLICK TO CARDS
-        document.querySelectorAll('.list-card, .card').forEach(card => {
-            card.addEventListener('click', () => {
-                const data = {
-                    title: card.querySelector('h5, .card-title').innerText,
-                    host: card.querySelector('.host, .para').innerText,
-                    img: card.querySelector('img').src
-                };
-                activatePlayer(data);
-            });
+        container.addEventListener('mousedown', (e) => {
+            isDragging = true;
+            updateSlider(e.clientX);
         });
 
-        // 4. MAXIMIZE FEATURE
-        document.getElementById('maximizeBtn').addEventListener('click', (e) => {
-            e.stopPropagation();
-            document.getElementById('fullPlayerPage').classList.add('active');
+        window.addEventListener('mousemove', (e) => {
+            if (isDragging) updateSlider(e.clientX);
         });
 
-        document.getElementById('closeFullPlayer').addEventListener('click', () => {
-            document.getElementById('fullPlayerPage').classList.remove('active');
+        window.addEventListener('mouseup', () => {
+            isDragging = false;
         });
+    }
 
-        // 5. PLAY/PAUSE SYNC
-        document.querySelectorAll('.toggle-playback').forEach(btn => {
-            btn.addEventListener('click', (e) => {
-                e.stopPropagation();
-                isPlaying = !isPlaying;
-                const newIcon = isPlaying ? 'pause' : 'play';
-                document.querySelectorAll('.playback-icon').forEach(icon => {
-                    icon.setAttribute('data-lucide', newIcon);
-                    icon.style.fill = isPlaying ? 'white' : 'none';
-                });
-                lucide.createIcons();
-            });
-        });
+    initSlider('miniVolume');
+    initSlider('mainProgress');
 
-        // 6. SLIDER LOGIC
-        function initSlider(containerId) {
-            const container = document.getElementById(containerId);
-            if(!container) return;
-            const fill = container.querySelector('.slider-fill');
-            const knob = container.querySelector('.slider-knob');
-            let isDragging = false;
+</script>
 
-            const updateSlider = (clientX) => {
-                const rect = container.getBoundingClientRect();
-                let percent = (clientX - rect.left) / rect.width;
-                percent = Math.max(0, Math.min(1, percent));
-                fill.style.width = (percent * 100) + '%';
-                knob.style.left = (percent * 100) + '%';
-            };
-
-            container.addEventListener('mousedown', (e) => {
-                isDragging = true;
-                updateSlider(e.clientX);
-            });
-
-            window.addEventListener('mousemove', (e) => {
-                if (isDragging) updateSlider(e.clientX);
-            });
-
-            window.addEventListener('mouseup', () => {
-                isDragging = false;
-            });
-        }
-
-        initSlider('miniVolume');
-        initSlider('mainProgress');
-        // 7. MAXIMIZE FEATURE (USE ONLY THIS SYSTEM)
-document.getElementById('maximizeBtn').addEventListener('click', () => {
-    document.getElementById('fullPlayerPage').classList.add('active');
-});
-
-document.getElementById('closeFullPlayer').addEventListener('click', () => {
-    document.getElementById('fullPlayerPage').classList.remove('active');
-});
-
-    </script>
 </body>
 </html>

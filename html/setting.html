@@ -6,6 +6,7 @@
     <title>Echo - Settings</title>
     <link rel="stylesheet" href="../css/home.css">
     <link rel="stylesheet" href="../css/setting.css">
+    <link rel="stylesheet" href="../css/responsive.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/lucide@latest"></script>
 </head>
@@ -68,6 +69,13 @@
                     <p>Auto-pause after set time</p>
                 </div>
             </div>
+            <div class="settings-card">
+                <div class="card-icon"><i data-lucide="download"></i></div>
+                <div class="card-text">
+                    <h5>Downloaded Podcasts</h5>
+                    <p>works without mobile data</p>
+                </div>
+            </div>
         </section>
 
         <section class="settings-section">
@@ -106,6 +114,33 @@
         <div class="bottom-nav-item" onclick="location.href='library.html'"><i data-lucide="library"></i><span>Library</span></div>
         <div class="bottom-nav-item active" onclick="location.href='setting.html'"><i data-lucide="settings"></i><span>Settings</span></div>
     </nav>
+     <nav class="bottom-navbar">
+
+    <div class="bottom-nav-item"
+         onclick="location.href='home.html'">
+        <i data-lucide="home"></i>
+        <span>Home</span>
+    </div>
+
+    <div class="bottom-nav-item"
+         onclick="location.href='explore.html'">
+        <i data-lucide="compass"></i>
+        <span>Explore</span>
+    </div>
+
+    <div class="bottom-nav-item active"
+         onclick="location.href='library.html'">
+        <i data-lucide="library"></i>
+        <span>Library</span>
+    </div>
+
+    <div class="bottom-nav-item"
+         onclick="location.href='setting.html'">
+        <i data-lucide="settings"></i>
+        <span>Settings</span>
+    </div>
+
+</nav>
 
     <div class="playback-status-bar">
         <span>Select an episode to start listening</span>
