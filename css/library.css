@@ -23,7 +23,6 @@ body {
     overflow-x: hidden;
 }
 
-/* --- SIDEBAR --- */
 .sidebar {
     width: 250px;
     height: 100vh;
@@ -120,7 +119,6 @@ h1 {
     box-shadow: 0 4px 15px rgba(139, 92, 246, 0.3);
 }
 
-/* --- GRID OVERLAP (Subscribed Shows) --- */
 .grid-overlap {
     display: flex;
     gap: 0;
@@ -198,7 +196,6 @@ h1 {
     padding-left: 10px;
 }
 
-/* --- LIST CARDS (Saved/History) --- */
 .list-container {
     display: flex;
     flex-direction: column;
@@ -292,7 +289,6 @@ h1 {
     margin-top: 5px;
 }
 
-/* --- PLAYER UI ELEMENTS --- */
 .playback-status-bar {
     position: fixed;
     bottom: 0;
@@ -337,7 +333,6 @@ h1 {
     left: 70%;
 }
 
-/* --- FULL PLAYER OVERLAY --- */
 .full-player-page {
     position: fixed;
     top: 0;
@@ -427,7 +422,6 @@ h1 {
     cursor: pointer;
 }
 
-/* --- PROGRESS BAR --- */
 .progress-wrap {
     width: 100%;
     height: 4px;
@@ -438,7 +432,7 @@ h1 {
     height: 100%;
     background: #8b5cf6;
 }
-/* Prevent anchor tags from breaking click */
+
 a {
     text-decoration: none;
     color: inherit;
@@ -455,15 +449,13 @@ a {
 
     margin-bottom: 40px;
 }
-/* ============================= */
-/* BOTTOM NAVBAR */
-/* ============================= */
+
 
 .bottom-navbar {
-    display: none; /* hidden by default */
+    display: none; 
 
     position: fixed;
-    bottom: 80px;   /* sits above playback bar */
+    bottom: 80px;  
     left: 0;
 
     width: 100%;

@@ -10,7 +10,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/lucide@latest"></script>
     <style>
-        /* Essential styles for the full-player animation transition */
+        
         .full-player-page {
             position: fixed;
             top: 0;
@@ -281,9 +281,7 @@
 
     let isPlaying = true;
 
-    // ==============================
-    // 1. SECTION SWITCHING
-    // ==============================
+   
     function showSection(name, btn) {
         document.getElementById('subscribed-section').style.display = 'none';
         document.getElementById('saved-section').style.display = 'none';
@@ -297,23 +295,19 @@
         btn.classList.add('active');
     }
 
-    // ==============================
-    // 2. ACTIVATE PLAYER
-    // ==============================
+  
     const activatePlayer = () => {
         document.getElementById('playerPlaceholder').style.display = 'none';
         document.getElementById('miniPlayer').style.display = 'flex';
     };
 
-    // ==============================
-    // 3. CARD CLICK LOGIC
-    // ==============================
+    
     document.querySelectorAll('.list-card').forEach(card => {
 
 
         card.addEventListener('click', function (e) {
 
-            // Prevent anchor navigation
+            
             e.preventDefault();
             e.stopPropagation();
 
@@ -327,12 +321,10 @@
             const host = hostEl.innerText;
             const img = imgEl.src;
 
-            // Mini Player Update
             document.getElementById('miniTitle').innerText = title;
             document.getElementById('miniHost').innerText = host;
             document.getElementById('miniImg').src = img;
 
-            // Full Player Update
             document.getElementById('fullTitle').innerText = title;
             document.getElementById('fullHost').innerText = host;
             document.getElementById('fullImg').src = img;
@@ -342,9 +334,6 @@
 
     });
 
-    // ==============================
-    // 4. MAXIMIZE / MINIMIZE
-    // ==============================
     document.getElementById('maximizeBtn').addEventListener('click', function (e) {
         e.stopPropagation();
         document.getElementById('fullPlayerPage').classList.add('active');
@@ -354,9 +343,7 @@
         document.getElementById('fullPlayerPage').classList.remove('active');
     });
 
-    // ==============================
-    // 5. PLAY / PAUSE SYNC
-    // ==============================
+
     document.querySelectorAll('.toggle-playback').forEach(btn => {
         btn.addEventListener('click', function (e) {
             e.stopPropagation();
@@ -373,9 +360,7 @@
         });
     });
 
-    // ==============================
-    // 6. SLIDER SYSTEM
-    // ==============================
+
     function initSlider(containerId) {
 
         const container = document.getElementById(containerId);

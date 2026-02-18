@@ -1,4 +1,3 @@
-/* --- SETTINGS CONTENT AREA --- */
 .main-content {
     margin-left: 320px;
     padding: 40px 50px 180px; 
@@ -16,7 +15,6 @@
     margin-bottom: 40px;
 }
 
-/* --- SETTINGS SECTIONS --- */
 .settings-section {
     margin-bottom: 35px;
 }
@@ -39,7 +37,7 @@
     cursor: pointer;
     transition: 0.3s;
     position: relative;
-    max-width: 600px; /* Aligns with your reference image width */
+    max-width: 600px; 
 }
 
 .settings-card:hover:not(.no-hover) {
@@ -71,7 +69,6 @@
     margin-top:3px;
 }
 
-/* --- SPECIAL CARDS --- */
 .sign-out {
     background: rgba(239, 68, 68, 0.1);
 }
@@ -92,7 +89,6 @@
     max-width: 600px;
 }
 
-/* --- TOGGLE SWITCH --- */
 .switch {
     position: absolute;
     right: 20px;
@@ -122,7 +118,7 @@
 }
 
 input:checked + .slider {
-    background-color: #8b5cf6; /* Matches your accent purple */
+    background-color: #8b5cf6; 
 }
 
 input:checked + .slider:before {
@@ -133,10 +129,10 @@ input:checked + .slider:before {
 /* ============================= */
 
 .bottom-navbar {
-    display: none; /* hidden by default */
+    display: none; 
 
     position: fixed;
-    bottom: 80px;   /* sits above playback bar */
+    bottom: 80px;   
     left: 0;
 
     width: 100%;

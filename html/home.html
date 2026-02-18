@@ -558,31 +558,28 @@
 
        document.querySelectorAll('.podcast-card').forEach(card => {
     card.addEventListener('click', () => {
-        // 1. UI styling: show which card is selected
+        
         document.querySelectorAll('.podcast-card').forEach(c => c.classList.remove('active-playing'));
         card.classList.add('active-playing');
 
-        // 2. DATA GRABBING: Get details from the card you clicked
+       
         const title = card.querySelector('.card-title').innerText;
         const author = card.querySelector('p').innerText;
         const imgSrc = card.querySelector('img').src;
         const duration = card.querySelector('.meta-row span:last-child').innerText;
 
-        // 3. MINI PLAYER UPDATE: Update the bottom bar
         const mini = document.getElementById('miniPlayer');
         mini.querySelector('.now-playing-title').innerText = title;
         mini.querySelector('.now-playing-subtitle').innerText = author;
         mini.querySelector('img').src = imgSrc;
 
-        // 4. FULL PLAYER UPDATE: Update the big overlay
         const full = document.getElementById('fullPlayerPage');
         full.querySelector('.full-title').innerText = title;
         full.querySelector('.full-subtitle').innerText = author;
         full.querySelector('.full-art').src = imgSrc;
-        // Update the duration (last span in time-info)
+      
         full.querySelector('.time-info span:last-child').innerText = duration;
 
-        // 5. Open the player
         activatePlayer();
     });
 });

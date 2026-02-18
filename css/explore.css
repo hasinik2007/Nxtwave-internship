@@ -23,9 +23,9 @@ body {
     overflow-x: hidden;
 }
 
-/* --- SIDEBAR --- */
+
 .sidebar {
-    width: 250px; /* Reduced width as requested */
+    width: 250px; 
     height: 100vh;
     background-color: var(--sidebar-dark);
     position: fixed;
@@ -81,10 +81,9 @@ body {
     color: var(--accent-purple);
 }
 
-/* --- MAIN CONTENT AREA --- */
 .main-content {
     flex: 1;
-    margin-left: 250px; /* Matched to sidebar width to remove the gap */
+    margin-left: 250px; 
     padding: 40px 50px 150px;
     overflow-y: auto;
 }
@@ -114,7 +113,6 @@ h1 {
     font-size: 18px;
 }
 
-/* --- BROWSE CATEGORIES --- */
 .section {
     margin-top: 45px;
 }
@@ -178,7 +176,6 @@ h1 {
 .green { background: #10ac84; }
 .violet { background: #9d5dfc; }
 
-/* --- TOP CHARTS --- */
 .charts-container {
     display: flex;
     flex-direction: column;
@@ -246,7 +243,6 @@ h1 {
     margin-left: auto;
 }
 
-/* --- BOTTOM BAR --- */
 .playback-status-bar {
     position: fixed;
     bottom: 0;
@@ -265,15 +261,13 @@ h1 {
     color: var(--text-dim);
     font-size: 18px;
 }
-/* ============================= */
-/* BOTTOM NAVBAR */
-/* ============================= */
+
 
 .bottom-navbar {
-    display: none; /* hidden by default */
+    display: none; 
 
     position: fixed;
-    bottom: 80px;   /* sits above playback bar */
+    bottom: 80px;  
     left: 0;
 
     width: 100%;

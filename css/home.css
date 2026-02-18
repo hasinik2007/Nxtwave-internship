@@ -556,21 +556,21 @@ body {
     margin-left:auto;
     margin-bottom:20px;
 }
-/* This container forces the title and link onto one row */
+
 .section-header {
     display: flex;
-    justify-content: space-between; /* Pushes H2 to left, Link to right */
-    align-items: center;           /* Vertically centers them */
-    margin-bottom: 28px;           /* Replaces the old margin on H2 */
+    justify-content: space-between; 
+    align-items: center;          
+    margin-bottom: 28px;          
 }
 
-/* Remove the default margin-bottom from H2 so it doesn't break the flex alignment */
+
 .section-header h2 {
     margin-bottom: 0;
     font-size: 30px;
 }
 
-/* Your existing see-all class but cleaned up */
+
 .see-all {
     color: #94a3b8;
     font-size: 14px;
@@ -579,5 +579,5 @@ body {
 }
 
 .see-all:hover {
-    color: #8b5cf6; /* Turns purple on hover */
+    color: #8b5cf6; 
 }
